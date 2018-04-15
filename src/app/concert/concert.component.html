@@ -1,0 +1,16 @@
+<h2>My Concerts</h2>
+<ul class="concerts list-group">
+  <li *ngFor="let concert of concerts" (click)="onSelect(concert)" class="list-group-item">
+    <span class="badge">{{concert.artist}}</span> {{concert.venue}}
+  </li>
+</ul>
+
+<div *ngIf="selectedConcert">
+  <h2>{{ selectedConcert.artist | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedConcert.artist}}</div>
+  <div>
+    <label>venue:
+      <input [(ngModel)]="selectedConcert.venue" placeholder="name">
+    </label>
+  </div>
+</div>
