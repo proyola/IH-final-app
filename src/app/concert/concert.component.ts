@@ -13,7 +13,7 @@ export class ConcertComponent implements OnInit {
 
   onSelect(concert: Concert): void {
     this.selectedConcert = concert;
-}
+  }
 
   constructor() { }
 
