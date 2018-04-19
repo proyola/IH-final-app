@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { ConcertComponent } from './concert/concert.component';
 import { HomeComponent } from './home/home.component';
 import { ArtistComponent } from './artist/artist.component';
+import { ArtistListComponent } from './artist-list/artist-list.component';
 
 
 // Las rutas son un array de objetos que tienen un path que es donde van a llevar y el componente que inyectan
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: '', component: HomeComponent},
   { path: 'concerts', component: ConcertComponent },
-  { path : 'artist', component: ArtistComponent}
+  { path : 'artists', component: ArtistListComponent}
 ];
 
 @NgModule({
@@ -23,7 +25,8 @@ const routes: Routes = [
     AppComponent,
     ConcertComponent,
     HomeComponent,
-    ArtistComponent
+    ArtistComponent,
+    ArtistListComponent
   ],
   imports: [
     NgbModule.forRoot(),
