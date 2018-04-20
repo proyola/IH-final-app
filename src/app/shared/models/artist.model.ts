@@ -1,5 +1,21 @@
 export class Artist {
-    artist: string;
+    id: string;
+    name: string;
     musicStyle: string;
-    mainAlbums: string;
+    city: string;
+    albums: Array<string> = new Array();
+    image?: string;
+
+    public asFormData(): FormData {
+      const data = new FormData();
+      data.append('name', this.name);
+      data.append('musicStyle', this.musicStyle);
+      data.append('city', this.city);
+      for (let album of this.albums) {
+                  data.append('album', album);
+              }
+              data.append('image', this.image);
+
+              return data;
+    }
 }

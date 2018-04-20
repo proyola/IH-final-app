@@ -8,5 +8,5 @@ import { Router } from '@angular/router';
 })
 
 export class AppComponent {
-  title:string = 'Paloma'
+  title:string = 'Musicly: learn more from your favourite artists'
 }

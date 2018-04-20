@@ -4,20 +4,34 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router'
+import { ArtistService } from './shared/services/artist.service';
 
 import { AppComponent } from './app.component';
 import { ConcertComponent } from './concert/concert.component';
 import { HomeComponent } from './home/home.component';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
-
+import { FormArtistComponent } from './form-artist/form-artist.component';
+import { ArtistBaseComponent } from './artist-base/artist-base.component';
 
 // Las rutas son un array de objetos que tienen un path que es donde van a llevar y el componente que inyectan
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: '', component: HomeComponent},
+  { path: '', redirectTo: 'artists', pathMatch: 'full'},
+  { path : 'artists', component: ArtistListComponent},
   { path: 'concerts', component: ConcertComponent },
-  { path : 'artists', component: ArtistListComponent}
+  {
+    path: 'artist',
+    component: ArtistBaseComponent,
+    children: [{
+      path: 'new',
+      component: FormArtistComponent
+      },
+      {
+        path: ':id',
+        component: ArtistComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({
@@ -25,8 +39,10 @@ const routes: Routes = [
     AppComponent,
     ConcertComponent,
     HomeComponent,
+    ArtistBaseComponent,
     ArtistComponent,
-    ArtistListComponent
+    ArtistListComponent,
+    FormArtistComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -35,7 +51,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [ArtistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

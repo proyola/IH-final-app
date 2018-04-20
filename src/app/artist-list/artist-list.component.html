@@ -1,3 +1,12 @@
-<p>
-  artist-list works!
-</p>
+<a [routerLink]="['/artist/new']">
+  <i class="fa fa-plus"></i>
+</a>
+<div class="row">
+  <div *ngFor="let artist of artists" class="artist col-xs-12 col-sm-3">
+    <h3> {{ artist.name }} </h3>
+    <p> {{ artist.style }} </p>
+    <p> {{ artist.city }} </p>
+    <p> {{ artist.album }} </p>
+    <a [routerLink]="['/artists', artist.id]"> View Details </a>
+  </div>
+</div>

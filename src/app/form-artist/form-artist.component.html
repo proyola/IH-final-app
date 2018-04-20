@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+
+    <form (ngSubmit)="onSubmitArtist(artistForm)" #artistForm="ngForm">
+      <div class="form-group" [class.has-error]="name.errors">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-fire"></i>
+          </span>
+          <input type="text" name="name" class="form-control" placeholder="Band Name" [(ngModel)]="artist.name" #brand="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="name.errors">
+          <ul>
+            <li *ngIf="name.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group" [class.has-error]="style.errors">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-tag"></i>
+          </span>
+          <input type="text" name="style" class="form-control" placeholder="Music Style" [(ngModel)]="artist.style" #style="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="style.errors">
+          <ul>
+            <li *ngIf="style.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group" [class.has-error]="city.errors">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-tag"></i>
+          </span>
+          <input type="text" name="city" class="form-control" placeholder="Home Town" [(ngModel)]="artist.city" #style="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="city.errors">
+          <ul>
+            <li *ngIf="city.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group" [class.has-error]="album.errors">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-tag"></i>
+          </span>
+          <input type="text" name="album" class="form-control" placeholder="Album" [(ngModel)]="artist.album" #style="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="album.errors">
+          <ul>
+            <li *ngIf="album.errors.required">Required</li>
+          </ul>
+        </label>
+      </div> -->
+
+
+
+      <div class="form-group" class="has-error" *ngIf="apiError">
+        <label class="control-label">
+          {{ apiError }}
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-block btn-primary" [disabled]="!artistForm.valid">Add Artist</button>
+      </div>
+    </form>
+  </div>
+</div>

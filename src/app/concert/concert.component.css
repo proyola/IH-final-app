@@ -1,1 +1,10 @@
-
+h2 {
+  text-align: center;
+  color: grey;
+  font-size: 200%
+}
+.list-group {
+  text-align: center;
+  font-size: 150%;
+  color: grey;
+}
