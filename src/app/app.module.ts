@@ -7,7 +7,6 @@ import { RouterModule, Routes } from '@angular/router'
 import { ArtistService } from './shared/services/artist.service';
 
 import { AppComponent } from './app.component';
-import { ConcertComponent } from './concert/concert.component';
 import { HomeComponent } from './home/home.component';
 import { ArtistComponent } from './artist/artist.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
@@ -19,7 +18,6 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, 
   { path: '', component: HomeComponent},
   { path : 'artists', component: ArtistListComponent},
-  { path: 'concerts', component: ConcertComponent },
   {
     path: 'artist',
     component: ArtistBaseComponent,
@@ -38,7 +36,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ConcertComponent,
     HomeComponent,
     ArtistBaseComponent,
     ArtistComponent,
