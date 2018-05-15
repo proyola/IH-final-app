@@ -1,8 +1,7 @@
 import { Concert } from './shared/models/concert.model'
 
 export const CONCERTS: Concert [] = [
-{ artist: 'Biffy Clyro', venue: 'Stadium', city: 'Rome'},
-{ artist: 'Foo Fighters', venue: 'Street', city: 'Monaco'},
-{ artist: 'Manc', venue: 'parque', city: 'Lux'},
-{ artist: 'IM', venue: 'casa', city: 'ben'},
+{ artist: 'Biffy Clyro', venue: 'Prague Stadium', city: 'Prague'},
+{ artist: 'Foo Fighters', venue: 'Download Festival', city: 'Paris'},
+{ artist: 'Manic Street Preachers', venue: 'Mad Cool', city: 'Madrid'},
 ]

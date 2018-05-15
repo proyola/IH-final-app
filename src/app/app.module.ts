@@ -16,7 +16,8 @@ import { ArtistBaseComponent } from './artist-base/artist-base.component';
 
 // Las rutas son un array de objetos que tienen un path que es donde van a llevar y el componente que inyectan
 const routes: Routes = [
-  { path: '', redirectTo: 'artists', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
+  { path: '', component: HomeComponent},
   { path : 'artists', component: ArtistListComponent},
   { path: 'concerts', component: ConcertComponent },
   {
