@@ -12,6 +12,7 @@ import { ArtistComponent } from './artist/artist.component';
 import { ArtistListComponent } from './artist-list/artist-list.component';
 import { FormArtistComponent } from './form-artist/form-artist.component';
 import { ArtistBaseComponent } from './artist-base/artist-base.component';
+import { LoginComponent } from './misc/login/login.component';
 
 // Las rutas son un array de objetos que tienen un path que es donde van a llevar y el componente que inyectan
 const routes: Routes = [
@@ -40,7 +41,8 @@ const routes: Routes = [
     ArtistBaseComponent,
     ArtistComponent,
     ArtistListComponent,
-    FormArtistComponent
+    FormArtistComponent,
+    LoginComponent
   ],
   imports: [
     NgbModule.forRoot(),
